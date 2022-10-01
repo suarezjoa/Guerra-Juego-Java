@@ -17,11 +17,11 @@ public class UCPQueue {
         cola.add(r1);
     }
     public Recursoobj pop(){
-        Predicate<Recursoobj> proridad = (Recursoobj s) -> ((Recursoobj) s).getPrio() >= 1;
+        Predicate<Recursoobj> prioridadte = (Recursoobj s) -> ((Recursoobj) s).getPrio() >= 1;
 
         Recursoobj aux=new Recursoobj(900000,null);
         ArrayList<Recursoobj> aux2= new ArrayList<Recursoobj>();
-        if(cola.stream().anyMatch(proridad)){
+        if(cola.stream().anyMatch(prioridadte)){
             for (Object nico : cola) {
                 if(((Recursoobj) nico).getPrio() >= 1){
                     aux2.add((Recursoobj) nico);
@@ -44,8 +44,8 @@ public class UCPQueue {
         }
         return null;
     }
-    public Object first(){ 
-        return cola.get(0);
+    public Object first(int n){ 
+        return cola.get(n);
     }
     public int count(){ 
         return cola.size();
